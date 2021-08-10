@@ -1,0 +1,22 @@
+{
+    "params":
+
+    {
+        "local_server": "True",
+        "local_uri": "mysql://root:@localhost/imdblite",
+        "prod_uri": "mysql://root:@localhost/imdblite",
+        "fb_url": "https://www.facebook.com/dubeyram07/",
+        "ig_url": "https://www.instagram.com/learn2_cod/",
+        "gh_ url": "https://github.com/dubeyram",
+        "blog_name": "IMDBlite",
+        "gmail-user": "dubey233310@gmail.com",
+        "gmail-password": "ITEngineer@123",
+        "about_text": "IMDBlite (an acronym for Internet Movie Database) is an online database of information related to films, television programs, home videos, video games, and streaming content online– including cast,production crew and personal biographies, plot summaries,trivia, ratings,and fan and critical reviews.An additional fan feature, message boards, was abandoned in August 2021. Originally a fan - operated website,the database is now owned and operated by imdblite.pythonanywhere.com, Inc.,a subsidiary of Fynd. ",
+        "no_of_posts": 3,
+
+        "admin_user": "learn2_cod",
+        "admin_password": "Learn@123",
+        "upload_location": "c:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python39\\Project flask",
+        "v": "login"
+    }
+}
