@@ -1,0 +1,196 @@
+{% extends "layout.html" %} {% block body %}
+
+<!-- Page Header -->
+<header class="masthead" style="background-image: url({{ url_for('static' , filename='img/admin.jpg')}})">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1>Admin Panel</h1>
+                    <!-- <a href="/home"> </a> -->
+                    <span class="subheading" class="btn btn-dark">Now you can manage your posts!</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+  label{
+    font-weight: bolder;
+  }
+</style>
+
+<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <h1>Basic Action</h1>
+      <a href="/dashboard"
+        ><button class="btn btn-success">Dashboard Home</button></a
+      >
+      <a href="/logout"><button class="btn btn-success">Log Out</button></a>
+      <hr />
+      <h1 class="btn btn-warning">Edit Posts</h1>
+
+      <form
+        name="sentMessage"
+        action="/edit/{{sno}}"
+        method="post"
+        id="contactForm"
+        novalidate
+      >
+        <div class="row">
+          <div class="col">
+            <label>Name</label>
+            <input
+              type="text"
+              class="form-control"
+              name="title"
+              placeholder="Title"
+              id="title"
+              required
+              data-validation-required-message="Please enter your name."
+              value="{{movieslist.name}}"
+            />
+            <p class="help-block text-danger"></p>
+          </div>
+
+          <div class="col">
+            <label>Imdb Ratig</label>
+            <input
+              type="text"
+              class="form-control"
+              name="tline"
+              placeholder="IMDB Rating"
+              id="tline"
+              required
+              data-validation-required-message="Please enter your email address."
+              value="{{movieslist.releaseyear}}"
+            />
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label>Director</label>
+            <input
+              type="text"
+              class="form-control"
+              name="director"
+              placeholder="director"
+              id="director"
+              required
+              data-validation-required-message="Please enter Director name."
+              value="{{movieslist.director}}"
+            />
+            <p class="help-block text-danger"></p>
+          </div>
+
+          <div class="col">
+            <label>Popularity</label>
+            <input
+              type="text"
+              class="form-control"
+              name="pop"
+              placeholder="Popularity"
+              id="pop"
+              required
+              data-validation-required-message="Please enter Popularity."
+              value="{{movieslist.popularity}}"
+            />
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label>Genre</label>
+            <input
+              type="text"
+              class="form-control"
+              name="genre"
+              placeholder="Genre"
+              id="genre"
+              required
+              data-validation-required-message="Please enter Genre."
+              value="{{movieslist.genre}}"
+            />
+            <p class="help-block text-danger"></p>
+          </div></div>
+        <div class="row">
+          <div class="col">
+            <label>Slug</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Slug"
+              name="slug"
+              id="slug"
+              required
+              data-validation-required-message="Please enter Slug."
+              value="{{movieslist.slug}}"
+            />
+            <p class="help-block text-danger"></p>
+          </div>
+           <div class="col">
+            <label>Release Year</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Release Year"
+              name="year"
+              id="year"
+              required
+              data-validation-required-message="Please enter ReleaseYear."
+              value="{{movieslist.slug}}"
+            />
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label>Description</label>
+            <textarea
+              rows="5"
+              class="form-control"
+              placeholder="description"
+              name="description"
+              id="editor"
+              required
+              data-validation-required-message="Please enter Description.  "
+              class_="form-control"
+            >
+ {{movieslist.description | safe }} </textarea
+            >
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label>img_file</label>
+            <input
+              class="form-control"
+              placeholder="Image filename"
+              name="img_file"
+              id="img_file"
+              value="{{movieslist.img_file}}"
+            />
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+
+        <br />
+        <div id="success"></div>
+
+        <button type="submit" class="btn btn-primary" id="sendMessageButton">
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}S

@@ -1,0 +1,43 @@
+{% extends "layout.html" %} {% block body %}
+
+
+<style>
+    body,
+    html {
+        height: 100%;
+        margin: 0;
+    }
+    
+    #head {
+        height: 50%;
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+<!-- Page Header -->
+
+<header id="head" style="background-image: url('https://source.unsplash.com/1600x900/?movie');">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="page-heading">
+                    <h1 style="color: white; text-underline-position: center; text-align:center; margin-top:70px;font-size:100px">About Us!</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto mt-10rem">
+            <p style="margin-top: 50px; font-size:medium; font-weight:bold">{{params['about_text']}}</p>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

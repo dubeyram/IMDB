@@ -1,0 +1,78 @@
+{% extends "layout.html" %} {% block body %}
+<style>
+    #g2 {
+        color: darkgreen;
+        text-shadow: 1px 1px black;
+        font-size: 45px;
+        margin-top: 0px;
+        float: left;
+    }
+
+    #g5 {
+        color: white;
+        text-shadow: 2px 2px black;
+        font-size: 25px;
+        margin-top: 0px;
+        float: left;
+        font-weight: bolder;
+    }
+</style>
+<!-- Page Header -->
+<header class="masthead" style="background-image:url('https://source.unsplash.com/1600x900/?movies')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+
+                    <!-- <a href="/home"> </a> --><br /><br />
+                    <span class="subheading" id="g5"><u>Now you can manage your Profile!</u></span>
+                    <a href="/logout" style="float: right"><button class="btn btn-success">Log Out</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <hr />
+            <h1 class="btn btn-warning">Edit Profile</h1>
+
+            <form name="sentMessage" action="/profile" method="post" id="contactForm" novalidate>
+
+
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <label>Name</label>
+                        <h3 style="color: darkred">Name</h3>
+                        <p class="form-control" name="name" title="Name Can't be Changed" placeholder="Name" id="name">
+                            {{name}}
+                        </p>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>Email</label>
+                        <h3 style="color: darkred">Email</h3>
+                        <input type="text" class="form-control" placeholder="Update Email" name="email" id="email" required data-validation-required-message="Please enter your Email." value="{{session['email']}}">
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+
+                <br />
+                <div id="success"></div>
+
+                <button type="submit" class="btn btn-primary" id="sendMessageButton">
+          Update
+        </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
